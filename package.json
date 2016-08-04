@@ -6,10 +6,10 @@
   "scripts": {
     "hmr": "cross-env NODE_ENV=HMR node src/server/app.js",
     "dev-start": "cross-env NODE_ENV=development node src/server/app.js",
-    "start": "cross-env NODE_ENV=production node src/server/app.js",
+    "start": "node src/server/app.js",
     "dev-build": "cross-env NODE_ENV=development webpack --config config/webpack.config.js --display-modules --profile --progress --colors --display-error-details",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.js -p --profile --progress --colors --display-error-details",
-    "//postinstall": "export NODE_ENV=production & webpack -p --config config/webpack.config.js --progress"
+    "postinstall": "webpack -p --config config/webpack.config.js --progress"
   },
   "author": "iibing",
   "license": "MIT",
