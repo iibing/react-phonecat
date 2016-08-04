@@ -9,7 +9,7 @@
     "start": "node src/server/app.js",
     "dev-build": "cross-env NODE_ENV=development webpack --config config/webpack.config.js --display-modules --profile --progress --colors --display-error-details",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.js -p --profile --progress --colors --display-error-details",
-    "postinstall": "./node_modules/.bin/webpack -p --config config/webpack.config.js --progress"
+    "postinstall": "node_modules/.bin/webpack -p --config config/webpack.config.js --progress"
   },
   "author": "iibing",
   "license": "MIT",
