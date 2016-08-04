@@ -2,36 +2,33 @@
  * animations css stylesheet
  */
 
-/* animate ngRepeat in phone listing */
+/* animate in phone listing */
 
-.phone-listing.ng-enter,
-.phone-listing.ng-leave,
-.phone-listing.ng-move {
+.phone-listing-enter,
+.phone-listing-leave {
   -webkit-transition: 0.5s linear all;
   -moz-transition: 0.5s linear all;
   -o-transition: 0.5s linear all;
   transition: 0.5s linear all;
 }
 
-.phone-listing.ng-enter,
-.phone-listing.ng-move {
+.phone-listing-enter {
   opacity: 0;
   height: 0;
   overflow: hidden;
 }
 
-.phone-listing.ng-move.ng-move-active,
-.phone-listing.ng-enter.ng-enter-active {
+.phone-listing-enter.phone-listing-enter-active {
   opacity: 1;
   height: 120px;
 }
 
-.phone-listing.ng-leave {
+.phone-listing-leave {
   opacity: 1;
   overflow: hidden;
 }
 
-.phone-listing.ng-leave.ng-leave-active {
+.phone-listing-leave.phone-listing-leave-active {
   opacity: 0;
   height: 0;
   padding-top: 0;
@@ -39,59 +36,41 @@
 }
 
 /* cross fading between routes with ngView */
-
+/* Animate view transitions with `ngView` */
 .view-container {
   position: relative;
 }
 
-.view-frame.ng-enter,
-.view-frame.ng-leave {
-  background: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+.view-frame {
+  margin-top: 20px;
 }
 
-.view-frame.ng-enter {
-  -webkit-animation: 0.5s fade-in;
-  -moz-animation: 0.5s fade-in;
-  -o-animation: 0.5s fade-in;
-  animation: 0.5s fade-in;
+.view-frame-enter,
+.view-frame-leave {
+  background: white;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.view-frame-enter {
+  animation: 1s fade-in;
   z-index: 100;
 }
 
-.view-frame.ng-leave {
-  -webkit-animation: 0.5s fade-out;
-  -moz-animation: 0.5s fade-out;
-  -o-animation: 0.5s fade-out;
-  animation: 0.5s fade-out;
+.view-frame-leave {
+  animation: 1s fade-out;
   z-index: 99;
 }
 
 @keyframes fade-in {
   from { opacity: 0; }
-  to { opacity: 1; }
-}
-@-moz-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@-webkit-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
 @keyframes fade-out {
   from { opacity: 1; }
-  to { opacity: 0; }
-}
-@-moz-keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-@-webkit-keyframes fade-out {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  to   { opacity: 0; }
 }
 

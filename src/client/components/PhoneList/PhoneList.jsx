@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react'
 import PhoneListItem from './PhoneListItem'
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup'
+import animationsStylesIgnored from '../../styles/animations.css'
 
 const propTypes = {
     filter: PropTypes.string,
@@ -30,7 +32,9 @@ class PhoneList extends React.Component {
 
             return (
                 <ul className='phones'>
-                    {sortedPhones}
+                    <ReactCSSTransitionGroup transitionName="phone-listing" transitionEnterTimeout={0} transitionLeaveTimeout={0}>
+                        {sortedPhones}
+                    </ReactCSSTransitionGroup>
                 </ul>
             )
         } else {

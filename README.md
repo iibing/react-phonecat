@@ -31,7 +31,7 @@ npm install
 assets/                     --> all resources files (js/css/images)
     img/...                 --> images file
     js/...                  --> js files
-    styles/...
+    styles/...              --> css files
 config/
     index.js                --> common configuration for the app
     log4js.config.js        --> log4js configuration

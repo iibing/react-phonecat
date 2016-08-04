@@ -11,6 +11,7 @@ import {Provider} from 'react-redux'
 import configureStore from './store/configureStore'
 import PhoneListRoot from './components/PhoneListRoot'
 import PhoneDetails from './containers/PhoneDetails'
+import GitHubRibbon from './components/GitHub/GitHubRibbon'
 
 if (module.hot) {
     module.hot.accept()
@@ -21,9 +22,15 @@ const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
 
 render(
-    <Provider store={store}>
-    <Router history={history}>
-        <Route path="/" component={PhoneListRoot}/>
-        <Route path="phones/:phoneId" component={PhoneDetails}/>
-    </Router>
-</Provider>, document.getElementById('root'))
+    <div className="view-container">
+        <div className="view-frame">
+        <Provider store={store}>
+            <Router history={history}>
+                <Route path="/" component={PhoneListRoot}/>
+                <Route path="phones/:phoneId" component={PhoneDetails}/>
+            </Router>
+        </Provider>
+        </div>
+        <GitHubRibbon href="https://github.com/iibing/react-phonecat"/>
+    </div>, 
+document.getElementById('root'))
