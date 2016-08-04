@@ -1,3 +1,4 @@
+'use strict'
 const path = require('path')
 const {__DEV__} = require('./index').stage
 const log4js = require('log4js')
