@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/server/app.js",
+  "engines": {
+    "node": "6.3.1"
+  },
   "scripts": {
     "hmr": "cross-env NODE_ENV=HMR node src/server/app.js",
     "dev-start": "cross-env NODE_ENV=development node src/server/app.js",
